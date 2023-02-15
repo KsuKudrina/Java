@@ -55,6 +55,7 @@ public class HomeWork004 {
             fileWriter.newLine();
             fileWriter.write("Нагорная Алена Михайловна 35 Ж ");
             fileWriter.flush();
+            System.out.println(fileWriter); //эта строчкак кода не нужна!
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

@@ -117,6 +117,7 @@ public class HomeWork002 {
       for (int i = 0; i < 10_000; i++) {
          s += " = ";
       }
+      System.out.println(s); //эта строчкак кода не нужна!
       
       long end1 = System.currentTimeMillis();
 

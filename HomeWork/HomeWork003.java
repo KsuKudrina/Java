@@ -2,12 +2,15 @@
 package HomeWork;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.Collections;
-import java.util.List;
+
 import java.util.ListIterator;
 
 public class HomeWork003 {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         //  Создать новый список, добавить несколько строк и вывести коллекцию на экран.
 
@@ -53,8 +56,9 @@ public class HomeWork003 {
         //  Создать новый список и добавить в него несколько елементов первого списка.
 
         
-        List l1 = list.subList(1, 4);
-        System.out.println(l1);
+        // List l1 = list.subList(1, 4);
+        // System.out.println(l1);
+
 
         //  Удалить из первого списка все элементы отсутствующие во втором списке.
 
