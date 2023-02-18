@@ -1,32 +1,76 @@
 package OOP.HomeWork_OOP.HomeWork_01;
 
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Crossbowman;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Magician;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Monk;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Outlaw;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Peasant;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Sniper;
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Spearman;
+import java.util.ArrayList;
+import java.util.Random;
+
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Characters;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Names;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char.Peasant;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Artillery.Crossbowman;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Artillery.Sniper;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Esoterics.Magician;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Esoterics.Monk;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char.Outlaw;
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char.Spearman;
 
 public class Main {
     public static void main(String[] args) {
-        // Characters characters = new Characters(89, 100, 50, 10, 10, 100);
-        Peasant peasant = new Peasant(30, 30, 10, 0, 0, 10, 10);
         
-        Outlaw outlaw = new Outlaw(50, 50, 20, 0, 0, 10);
+        Peasant peasant = new Peasant(getName());
+        // System.out.println(peasant.getInfo());
+        // System.out.println(getName());
         
-        Spearman spearman = new Spearman(0, 0, 0, 0, 0, 0);
+        Outlaw outlaw = new Outlaw(getName());
+        // System.out.println(outlaw.getInfo());
+        // System.out.println(getName());
         
-        Sniper sniper = new Sniper(100, 100, 60, 0, 20, 
-            0, 10, 20, 100, 70, 0, 0);
+        Spearman spearman = new Spearman(getName());
+        // System.out.println(spearman.getInfo());
+        // System.out.println(getName());
         
-        Crossbowman crossbowman = new Crossbowman(100, 100, 60, 0, 10, 
-            0, 10, 10, 70, 70);
         
-        Magician magician = new Magician(100, 100, 90, 0, 20, 
-            0, 20, 10);
+        Sniper sniper = new Sniper(getName());
+        // System.out.println(sniper.getInfo());
+        // System.out.println(getName());
         
-        Monk monk = new Monk(100, 100, 90, 0, 10, 0, 10);
+        Crossbowman XBowMan = new Crossbowman(getName());
+        // System.out.println(XBowMan.getInfo());
+        // System.out.println(getName());
+        
+        Magician magician = new Magician(getName());
+        // System.out.println(magician.getInfo());
+        // System.out.println(getName());
+        
+        Monk monk = new Monk(getName());
+        // System.out.println(monk.getInfo());
+        // System.out.println(getName());
+
+        Random rnd = new Random();
+
+        ArrayList <Characters> Char = new ArrayList<>();
+        
+
+        for (int i = 0; i < 10; i++) {
+            int c = rnd.nextInt(7);
+            if (c == 0) {Char.add(peasant);}
+            if (c == 1) {Char.add(outlaw);}
+            if (c == 2) {Char.add(spearman);}
+            if (c == 3) {Char.add(XBowMan);} 
+            if (c == 4) {Char.add(sniper);}
+            if (c == 5) {Char.add(magician);}
+            if (c == 6) {Char.add(monk);}            
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Char.get(i).getInfo());
+        }
         
     }
+
+    private static String getName() {
+        String name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length -1)]);
+        return name;
+    }
+
+    
+    
 }
