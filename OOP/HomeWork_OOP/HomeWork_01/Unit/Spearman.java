@@ -1,6 +1,6 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char;
+package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
-public class Spearman extends Minor_characters {
+public class Spearman extends Characters {
     /**Копейщик */
 
     /**
@@ -9,21 +9,21 @@ public class Spearman extends Minor_characters {
      * @param maxHp
      * @param def
      * @param damage
-     * @param hide
-     * @param hit
+     * @param attack
+     * @param speed
      */
     
     /**принести оружие */
     int supply;
 
     public Spearman (String name){
-        super(150, 150, 3, 12, false, 2);
+        super(10, 10, 5, 13, 4, 4);
         super.name = name;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Я Копейщик" + " %s  / Hp: %d ", name, hp);
+        return String.format("Я Копейщик" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
     }
 
     @Override

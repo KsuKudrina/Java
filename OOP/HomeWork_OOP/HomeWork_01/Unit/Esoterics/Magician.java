@@ -1,4 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Esoterics;
+package OOP.HomeWork_OOP.HomeWork_01.Unit.Esoterics;
 
 public class Magician extends Esoteric {
     /**Колдун */
@@ -10,7 +10,7 @@ public class Magician extends Esoteric {
      * @param def
      * @param damage
      * @param attack
-     * @param treatment
+     * @param speed
      * @param magic
      */
 
@@ -18,17 +18,16 @@ public class Magician extends Esoteric {
     //         int treatment, int magic) {
 
     //     super(hp, maxHp, def, damage, attack, treatment, magic);
-        
     // }
 
     public Magician (String name){
-        super(150, 150, 3, 12, 5, 5, 8);
+        super(30, 30, 12, 5, 17, 9, 1);
         super.name = name;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Я Колдун" + " %s  / Hp: %d Magic: %d", name, hp, magic);
+        return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
     }
 
     @Override

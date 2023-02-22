@@ -1,6 +1,6 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char;
+package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
-public class Outlaw extends Minor_characters {
+public class Outlaw extends Characters {
     /**Разбойник */
     
     /**
@@ -9,21 +9,21 @@ public class Outlaw extends Minor_characters {
      * @param maxHp
      * @param def
      * @param damage
-     * @param hide
-     * @param hit
+     * @param attack
+     * @param speed
      */
 
     /**украсть */
     int steal;
 
     public Outlaw(String name){
-        super(150, 150, 3, 12, false, 2);
+        super(10, 10, 3, 24, 8, 6);
         super.name = name;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Я Разбойник" + " %s  / Hp: %d ", name, hp);
+        return String.format("Я Разбойник" + " %s  / Hp: %d Speed: %d ", name, hp, speed);
     }
 
     @Override

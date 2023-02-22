@@ -1,6 +1,6 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Minor_char;
+package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
-public class Peasant extends Minor_characters{
+public class Peasant extends  Characters{
     /**Крестьянин */
 
     /**кормить (+10 hp) */
@@ -12,18 +12,18 @@ public class Peasant extends Minor_characters{
      * @param maxHp
      * @param def
      * @param damage
-     * @param hide
-     * @param hit
+     * @param attack
+     * @param speed
      */
 
     public Peasant(String name){
-        super(150, 150, 3, 12, false, 2);
+        super(1, 1, 1, 1, 1, 3);
         super.name = name;
     }    
 
     @Override
     public String getInfo() {
-        return String.format("Я Крестьянин" + " %s  / Hp: %d ", name, hp);
+        return String.format("Я Крестьянин" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Main_char.Artillery;
+package OOP.HomeWork_OOP.HomeWork_01.Unit.Artillery;
 
 public class Sniper extends Artillery {
     /**Снайпер */
@@ -9,9 +9,10 @@ public class Sniper extends Artillery {
      * @param def
      * @param damage
      * @param attack
+     * @param speed
      * @param shots
      * @param maxShots
-     * @param accuracy
+
 
      */
 
@@ -21,13 +22,13 @@ public class Sniper extends Artillery {
     Object aim;     //метод
 
     public Sniper(String name){
-        super(150, 150, 5, 12, 10, 30,  30, 5);
+        super(15, 15, 10, 810, 12, 9,  32, 32);
         super.name = name;
     }
 
     @Override
     public String getInfo() {
-        return String.format("Я Снайпер" + " %s  / Hp: %d Shots: %d", name, hp, shots);
+        return String.format("Я Снайпер" + " %s  / Hp: %d Speed: %d", name, hp, speed);
     }
 
 

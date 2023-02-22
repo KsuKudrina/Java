@@ -1,5 +1,7 @@
 package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
+import java.util.Vector;
+
 public class Characters implements GameInterface {
     /**здоровье персонажа */
     protected int hp;
@@ -9,14 +11,22 @@ public class Characters implements GameInterface {
     protected int def;
     /**урон */
     protected int damage;
+    /**атака */
+    protected int attack;
+    /**скорость */
+    protected int speed;
+
+    String name;
 
     /**конструктор */
    
-    public Characters(int hp, int maxHp, int def, int damage){
+    public Characters(int hp, int maxHp, int def, int damage, int attack, int speed){
         this.hp = hp;
+        this.maxHp = maxHp;
         this.def = def;
         this.damage = damage;
-        this.maxHp = maxHp;
+        this.attack = attack;
+        this.speed = speed;
     }
 
     public void setHp(int hp) {
@@ -24,7 +34,7 @@ public class Characters implements GameInterface {
             this.hp = hp;
     }
 
-    public float getHp() {
+    public int getHp() {
         return hp;
     }
     // public int Attack(){
@@ -43,7 +53,6 @@ public class Characters implements GameInterface {
     //     }
     // }
 
-
     @Override
     public void step() {   
     }
@@ -51,6 +60,15 @@ public class Characters implements GameInterface {
     @Override
     public String getInfo() {
         return "Я человек!";
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+    @Override
+    public String toString() {
+        
+        return String.format("%s",getInfo());
     }
 
 }
