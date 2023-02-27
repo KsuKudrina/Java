@@ -20,9 +20,10 @@ public class Magician extends Esoteric {
     //     super(hp, maxHp, def, damage, attack, treatment, magic);
     // }
 
-    public Magician (String name){
-        super(30, 30, 12, 5, 17, 9, 1);
+    public Magician (String name, int x, int y){
+        super(1, 1, 30, 30, 12, 17, 9, 1);
         super.name = name;
+        this.damage = new int[]{-5, -5};
     }
 
     @Override
@@ -30,9 +31,4 @@ public class Magician extends Esoteric {
         return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
     }
 
-    @Override
-    public void step() {
-        super.step();
-    }
-    
 }

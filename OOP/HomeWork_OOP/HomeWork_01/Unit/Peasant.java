@@ -16,19 +16,15 @@ public class Peasant extends  Characters{
      * @param speed
      */
 
-    public Peasant(String name){
-        super(1, 1, 1, 1, 1, 3);
+    public Peasant(String name, int x, int y){
+        super(1, 1, 1, 1, 1, 1, 3);
         super.name = name;
+        this.damage = new int[]{1, 1};
     }    
 
     @Override
     public String getInfo() {
-        return String.format("Я Крестьянин" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
-    }
-
-    @Override
-    public void step() {
-        super.step();
+        return "Крестьянин";
     }
 
 }

@@ -16,18 +16,14 @@ public class Spearman extends Characters {
     /**принести оружие */
     int supply;
 
-    public Spearman (String name){
-        super(10, 10, 5, 13, 4, 4);
+    public Spearman (String name, int x, int y){
+        super(1, 1, 10, 10, 5, 4, 4);
         super.name = name;
+        this.damage = new int[]{1, 3};
     }
 
     @Override
     public String getInfo() {
         return String.format("Я Копейщик" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
-    }
-
-    @Override
-    public void step() {
-        super.step();
     }
 }

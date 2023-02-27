@@ -15,18 +15,14 @@ public class Monk extends Esoteric {
      * @param magic
      */
 
-    public Monk(String name){
-        super(30, 30, 7, 4, 12, 5, 1);
+    public Monk(String name, int x, int y){
+        super(1, 1, 30, 30, 7, 12, 5, 1);
         super.name = name;
+        this.damage = new int[]{-4, -4};
     }
 
     @Override
     public String getInfo() {
         return String.format("Я Монах" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-    }
-
-    @Override
-    public void step() {
-        super.step();
     }
 }

@@ -21,9 +21,10 @@ public class Sniper extends Artillery {
     /**приблизить цель */
     Object aim;     //метод
 
-    public Sniper(String name){
-        super(15, 15, 10, 810, 12, 9,  32, 32);
+    public Sniper(String name, int x, int y){
+        super(1, 1, 15, 15, 10, 12, 9,  32, 32);
         super.name = name;
+        this.damage = new int[]{8, 10};
     }
 
     @Override
@@ -31,11 +32,6 @@ public class Sniper extends Artillery {
         return String.format("Я Снайпер" + " %s  / Hp: %d Speed: %d", name, hp, speed);
     }
 
-
-    @Override
-    public void step() {
-        super.step();
-    }
 
     // public Object getMotionless() {
     //     return motionless;

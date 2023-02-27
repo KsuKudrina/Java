@@ -1,6 +1,6 @@
 package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Characters implements GameInterface {
     /**здоровье персонажа */
@@ -8,26 +8,34 @@ public class Characters implements GameInterface {
     /**максимальное здоровье */
     protected int maxHp;
     /**защита */
-    protected int def;
+    public int def;
     /**урон */
-    protected int damage;
+    protected int[] damage;
     /**атака */
     protected int attack;
     /**скорость */
     protected int speed;
 
-    String name;
+    public Vector2D pos;
+
+    public String state;
+
+    
+    protected String name;
 
     /**конструктор */
-   
-    public Characters(int hp, int maxHp, int def, int damage, int attack, int speed){
+
+    public Characters(int x, int y, int hp, int maxHp, int def, int attack, int speed) {
+        pos = new Vector2D(x, y);
         this.hp = hp;
         this.maxHp = maxHp;
         this.def = def;
-        this.damage = damage;
         this.attack = attack;
         this.speed = speed;
+        state = "Stand";
+    
     }
+
 
     public void setHp(int hp) {
         if (hp >= 0)
@@ -37,24 +45,33 @@ public class Characters implements GameInterface {
     public int getHp() {
         return hp;
     }
-    // public int Attack(){
-    //     this.hp -= (int)(damage * 0.8);
-    //     if (hp < 0) return 0;
-    //     else return damage;
-    // }
+    /**найти ближайшего */
+    protected int Nearest(ArrayList<Characters> side){
+        double min = 100;
+        int index = 0;
+        for (int i = 0; i < side.size(); i++) {
+            if(min > pos.getDistans(side.get(i).pos) & !side.get(i).state.equals("Die") ) {
+                index = i;
+                min = pos.getDistans(side.get(i).pos);
+            }
+        }
+        return index;
+    }
 
-    // public void Heal(int Hp){
-    //     this.hp = Hp + this.hp > this.maxHp ? this.maxHp : Hp + this.hp;
-    // }
-
-    // public void GetDamage(int damage) {
-    //     if (this.hp - damage > 0) {
-    //         this.hp -= damage;
-    //     }
-    // }
-
+    protected void getDamage(int damage) {
+       hp -= damage;
+       if (hp > maxHp) hp = maxHp;
+       if (hp < 0) state = "Die";
+       
+    }
+   
+    /**
+     * @param DarkSide
+     * @param BrightSide
+     */
     @Override
-    public void step() {   
+    public void step(ArrayList<Characters> DarkSide, ArrayList<Characters> BrightSide) {
+        
     }
 
     @Override
@@ -70,5 +87,21 @@ public class Characters implements GameInterface {
         
         return String.format("%s",getInfo());
     }
+
+      // public int Attack(){
+    //     this.hp -= (int)(damage * 0.8);
+    //     if (hp < 0) return 0;
+    //     else return damage;
+    // }
+
+    // public void Heal(int Hp){
+    //     this.hp = Hp + this.hp > this.maxHp ? this.maxHp : Hp + this.hp;
+    // }
+
+    // public void GetDamage(int damage) {
+    //     if (this.hp - damage > 0) {
+    //         this.hp -= damage;
+    //     }
+    // }
 
 }
