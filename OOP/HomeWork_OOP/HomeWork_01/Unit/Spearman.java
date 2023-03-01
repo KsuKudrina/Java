@@ -12,9 +12,6 @@ public class Spearman extends Characters {
      * @param attack
      * @param speed
      */
-    
-    /**принести оружие */
-    int supply;
 
     public Spearman (String name, int x, int y){
         super(1, 1, 10, 10, 5, 4, 4);

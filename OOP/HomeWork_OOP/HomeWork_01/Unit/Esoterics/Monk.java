@@ -11,7 +11,6 @@ public class Monk extends Esoteric {
      * @param damage
      * @param attack
      * @param speed
-    //  * @param treatment
      * @param magic
      */
 

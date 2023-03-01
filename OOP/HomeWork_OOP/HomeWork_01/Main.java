@@ -22,7 +22,6 @@ public class Main {
 
         ArrayList<Characters> DarkSide = new ArrayList<>();
         System.out.println("------------Темная сторона------------");
-        
 
         for (int i = 0; i < 10; i++) {
             int val = rnd.nextInt(4);
@@ -82,20 +81,16 @@ public class Main {
                 return o2.getSpeed() - o1.getSpeed();
             }
         });
-        System.out.println(list.toString()); 
+        // System.out.println(list.toString()); 
 
         for (Characters hero : list) {
             if (DarkSide.contains(hero)) hero.step(DarkSide, BrightSide);
             else hero.step(BrightSide, DarkSide);
         }
-        
     }
 
     private static String getName() {
         String name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length -1)]);
         return name;
     }
-
-    
-    
 }

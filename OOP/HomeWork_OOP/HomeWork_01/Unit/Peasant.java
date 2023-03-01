@@ -1,5 +1,7 @@
 package OOP.HomeWork_OOP.HomeWork_01.Unit;
 
+import java.util.ArrayList;
+
 public class Peasant extends  Characters{
     /**Крестьянин */
 
@@ -25,6 +27,13 @@ public class Peasant extends  Characters{
     @Override
     public String getInfo() {
         return "Крестьянин";
+    }
+
+    @Override
+    public void step(ArrayList<Characters> team1, ArrayList<Characters> team2) {
+        if (!this.state.equals("Die")){
+            this.state = "Stand";
+        }
     }
 
 }

@@ -14,11 +14,6 @@ public class Magician extends Esoteric {
      * @param magic
      */
 
-    // public Magician(int hp, int maxHp, int def, int damage, int attack, 
-    //         int treatment, int magic) {
-
-    //     super(hp, maxHp, def, damage, attack, treatment, magic);
-    // }
 
     public Magician (String name, int x, int y){
         super(1, 1, 30, 30, 12, 17, 9, 1);

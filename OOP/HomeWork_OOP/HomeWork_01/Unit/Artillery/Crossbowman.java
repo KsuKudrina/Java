@@ -1,9 +1,5 @@
 package OOP.HomeWork_OOP.HomeWork_01.Unit.Artillery;
 
-import java.util.ArrayList;
-
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Characters;
-
 public class Crossbowman extends Artillery {
     /**Арбалетчик */
     /**
@@ -17,7 +13,6 @@ public class Crossbowman extends Artillery {
      * @param shots
      * @param maxShots
      */
-    
     
     public Crossbowman(int x, int y, int hp, int maxHp, int def, int damage, int attack,int speed, int shots, int maxShots) {
         super(x, y, hp, maxHp, def,  attack, speed, shots, maxShots);
@@ -33,10 +28,4 @@ public class Crossbowman extends Artillery {
     public String getInfo() {
         return String.format("Я Арбалетчик" + " %s  / Hp: %d Speed: %d", name, hp, speed);
     }
-
-    // @Override
-    // public void step(ArrayList<Characters> DarkSide, ArrayList<Characters> BrightSide) {
-    //     if(hp == 0)
-    // }
-    
 }

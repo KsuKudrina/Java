@@ -20,7 +20,6 @@ public class Characters implements GameInterface {
 
     public String state;
 
-    
     protected String name;
 
     /**конструктор */
@@ -33,9 +32,7 @@ public class Characters implements GameInterface {
         this.attack = attack;
         this.speed = speed;
         state = "Stand";
-    
     }
-
 
     public void setHp(int hp) {
         if (hp >= 0)
@@ -45,12 +42,13 @@ public class Characters implements GameInterface {
     public int getHp() {
         return hp;
     }
+
     /**найти ближайшего */
     protected int Nearest(ArrayList<Characters> side){
         double min = 100;
         int index = 0;
         for (int i = 0; i < side.size(); i++) {
-            if(min > pos.getDistans(side.get(i).pos) & !side.get(i).state.equals("Die") ) {
+            if (min > pos.getDistans(side.get(i).pos) & !side.get(i).state.equals("Die") ) {
                 index = i;
                 min = pos.getDistans(side.get(i).pos);
             }
@@ -58,11 +56,21 @@ public class Characters implements GameInterface {
         return index;
     }
 
-    protected void getDamage(int damage) {
+    protected int Wounded(ArrayList<Characters> team){
+        //int max = maxHp;
+        int index = 0;
+        for (int i = 0; i < team.size(); i++) {
+            if (maxHp > team.get(i).getHp() & !team.get(i).state.equals("Die")){
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public void getDamage(int damage) {
        hp -= damage;
        if (hp > maxHp) hp = maxHp;
        if (hp < 0) state = "Die";
-       
     }
    
     /**
@@ -84,7 +92,6 @@ public class Characters implements GameInterface {
     }
     @Override
     public String toString() {
-        
         return String.format("%s",getInfo());
     }
 

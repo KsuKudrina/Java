@@ -20,11 +20,7 @@ public abstract class Artillery extends Characters {
     protected int shots;
 
     /**максимальное кол-во выстрелов */
-    protected int maxShots;
-
-
-    // protected String name;
-    
+    protected int maxShots;    
     
     /**конструктор */ 
     public Artillery(int x, int y, int hp, int maxHp, int def, int attack, int speed, int shots, int maxShots) {
@@ -50,6 +46,4 @@ public abstract class Artillery extends Characters {
         }
         shots--;
     }
-    
-        
 }
