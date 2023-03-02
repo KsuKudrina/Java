@@ -37,6 +37,7 @@ public abstract class Artillery extends Characters {
         int damage = (team2.get(index).def - attack > 0) ? 
         this.damage[0] : (team2.get(index).def - attack < 0) ? 
         this.damage[1] : this.damage[1] - this.damage[0];
+        team2.get(index).getDamage(damage);
 
         for (int i = 0; i < team1.size(); i++) {
             if (team1.get(i).getInfo().equals("Крестьянин") && team1.get(i).state.equals("Stand")){
@@ -45,5 +46,6 @@ public abstract class Artillery extends Characters {
             }
         }
         shots--;
+        // System.out.println("*****************");
     }
 }

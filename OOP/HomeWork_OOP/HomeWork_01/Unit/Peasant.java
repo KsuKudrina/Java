@@ -18,7 +18,7 @@ public class Peasant extends  Characters{
      * @param speed
      */
 
-    public Peasant(String name, int x, int y){
+    public Peasant(String name, Vector2D pos){
         super(1, 1, 1, 1, 1, 1, 3);
         super.name = name;
         this.damage = new int[]{1, 1};

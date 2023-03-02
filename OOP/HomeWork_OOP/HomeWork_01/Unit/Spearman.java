@@ -13,7 +13,7 @@ public class Spearman extends Characters {
      * @param speed
      */
 
-    public Spearman (String name, int x, int y){
+    public Spearman (String name, Vector2D pos){
         super(1, 1, 10, 10, 5, 4, 4);
         super.name = name;
         this.damage = new int[]{1, 3};
@@ -21,6 +21,7 @@ public class Spearman extends Characters {
 
     @Override
     public String getInfo() {
-        return String.format("Я Копейщик" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
+        // return String.format("Я Копейщик" + " %s  / Hp: %d  Speed: %d ", name, hp, speed);
+        return "Я Копейщик";
     }
 }

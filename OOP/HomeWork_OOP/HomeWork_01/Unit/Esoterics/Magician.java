@@ -1,5 +1,7 @@
 package OOP.HomeWork_OOP.HomeWork_01.Unit.Esoterics;
 
+import OOP.HomeWork_OOP.HomeWork_01.Unit.Vector2D;
+
 public class Magician extends Esoteric {
     /**Колдун */
 
@@ -15,7 +17,7 @@ public class Magician extends Esoteric {
      */
 
 
-    public Magician (String name, int x, int y){
+    public Magician (String name, Vector2D pos){
         super(1, 1, 30, 30, 12, 17, 9, 1);
         super.name = name;
         this.damage = new int[]{-5, -5};
@@ -23,7 +25,7 @@ public class Magician extends Esoteric {
 
     @Override
     public String getInfo() {
-        return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
+        // return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
+        return "Я Колдун";
     }
-
 }

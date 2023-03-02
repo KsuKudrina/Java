@@ -22,6 +22,8 @@ public class Characters implements GameInterface {
 
     protected String name;
 
+    protected String team;
+
     /**конструктор */
 
     public Characters(int x, int y, int hp, int maxHp, int def, int attack, int speed) {
@@ -70,7 +72,10 @@ public class Characters implements GameInterface {
     public void getDamage(int damage) {
        hp -= damage;
        if (hp > maxHp) hp = maxHp;
-       if (hp < 0) state = "Die";
+       if (hp <= 0){
+        hp = 0;
+        state = "Die";
+       } 
     }
    
     /**
@@ -93,6 +98,11 @@ public class Characters implements GameInterface {
     @Override
     public String toString() {
         return String.format("%s",getInfo());
+    }
+
+    public String getS() {
+        return String.format("%s %s  Hp: %d  State: %s",
+                this.getInfo(), this.name, this.hp, this.state);
     }
 
       // public int Attack(){

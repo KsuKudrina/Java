@@ -16,7 +16,7 @@ public class Outlaw extends Characters {
     /**украсть */
     int steal;
 
-    public Outlaw(String name, int x, int y){
+    public Outlaw(String name, Vector2D pos){
         super(1, 1, 10, 10, 3, 8, 6);
         super.name = name;
         this.damage = new int[]{2, 4};
@@ -24,6 +24,7 @@ public class Outlaw extends Characters {
 
     @Override
     public String getInfo() {
-        return String.format("Я Разбойник" + " %s  / Hp: %d Speed: %d ", name, hp, speed);
+        // return String.format("Я Разбойник" + " %s  / Hp: %d Speed: %d ", name, hp, speed);
+        return "Я Разбойник";
     }
 }

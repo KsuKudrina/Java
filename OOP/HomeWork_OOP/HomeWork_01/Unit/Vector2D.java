@@ -13,8 +13,7 @@ public class Vector2D {
 
     /**расстояние */
     public double getDistans(Vector2D coord){
-        return Math.sqrt((Math.pow(x - coord.y, 2)) + Math.pow(y - coord.x, 2));
+        return Math.sqrt((Math.pow(x - coord.x, 2)) + Math.pow(y - coord.y, 2));
     }
-
 
 }
