@@ -1,8 +1,8 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit;
+package OOP.HomeWork_OOP.Unit;
 
 import java.util.ArrayList;
 
-public class Characters implements GameInterface {
+public class Human implements GameInterface {
     /**здоровье персонажа */
     protected int hp;
     /**максимальное здоровье */
@@ -16,17 +16,19 @@ public class Characters implements GameInterface {
     /**скорость */
     protected int speed;
 
-    public Vector2D pos;
+    protected Vector2D pos;
 
-    public String state;
+    protected String state;
 
     protected String name;
 
-    protected String team;
+    protected static int heroCnt;
+
+    public int[] getCoords() {return new int[]{pos.x, pos.y};}
 
     /**конструктор */
 
-    public Characters(int x, int y, int hp, int maxHp, int def, int attack, int speed) {
+    public Human(int x, int y, int hp, int maxHp, int def, int attack, int speed) {
         pos = new Vector2D(x, y);
         this.hp = hp;
         this.maxHp = maxHp;
@@ -34,6 +36,7 @@ public class Characters implements GameInterface {
         this.attack = attack;
         this.speed = speed;
         state = "Stand";
+        heroCnt++;
     }
 
     public void setHp(int hp) {
@@ -46,7 +49,7 @@ public class Characters implements GameInterface {
     }
 
     /**найти ближайшего */
-    protected int Nearest(ArrayList<Characters> side){
+    protected int Nearest(ArrayList<Human> side){
         double min = 100;
         int index = 0;
         for (int i = 0; i < side.size(); i++) {
@@ -58,16 +61,6 @@ public class Characters implements GameInterface {
         return index;
     }
 
-    protected int Wounded(ArrayList<Characters> team){
-        //int max = maxHp;
-        int index = 0;
-        for (int i = 0; i < team.size(); i++) {
-            if (maxHp > team.get(i).getHp() & !team.get(i).state.equals("Die")){
-                index = i;
-            }
-        }
-        return index;
-    }
 
     public void getDamage(int damage) {
        hp -= damage;
@@ -83,9 +76,7 @@ public class Characters implements GameInterface {
      * @param BrightSide
      */
     @Override
-    public void step(ArrayList<Characters> DarkSide, ArrayList<Characters> BrightSide) {
-        
-    }
+    public void step(ArrayList<Human> DarkSide, ArrayList<Human> BrightSide) {}
 
     @Override
     public String getInfo() {
@@ -95,16 +86,26 @@ public class Characters implements GameInterface {
     public int getSpeed() {
         return speed;
     }
+    // @Override
+    // public String toString() {
+    //     return String.format("%s",getInfo());
+    // }
+
     @Override
     public String toString() {
-        return String.format("%s",getInfo());
+        return  getInfo() + " " + 
+                name +
+                " H:" + Math.round(hp) +
+                " A:" + attack +
+                " Dmg:" + Math.round(Math.abs((damage[0] + damage[1])/2)) +
+                " " + state;
     }
-
     public String getS() {
         return String.format("%s %s  Hp: %d  State: %s",
                 this.getInfo(), this.name, this.hp, this.state);
     }
-
+    
+    
       // public int Attack(){
     //     this.hp -= (int)(damage * 0.8);
     //     if (hp < 0) return 0;

@@ -1,6 +1,6 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit;
+package OOP.HomeWork_OOP.Unit;
 
-public class Outlaw extends Characters {
+public class Outlaw extends Human {
     /**Разбойник */
     
     /**
@@ -25,6 +25,6 @@ public class Outlaw extends Characters {
     @Override
     public String getInfo() {
         // return String.format("Я Разбойник" + " %s  / Hp: %d Speed: %d ", name, hp, speed);
-        return "Я Разбойник";
+        return "Разбойник";
     }
 }

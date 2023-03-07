@@ -1,6 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Artillery;
-
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Vector2D;
+package OOP.HomeWork_OOP.Unit;
 
 public class Sniper extends Artillery {
     /**Снайпер */
@@ -17,7 +15,7 @@ public class Sniper extends Artillery {
      */
 
     public Sniper(String name, Vector2D pos){
-        super(1, 1, 15, 15, 10, 12, 9,  32, 32);
+        super(1, 1, 15, 15, 10, 12, 9,  32, 32, 1);
         super.name = name;
         this.damage = new int[]{8, 10};
     }
@@ -25,7 +23,7 @@ public class Sniper extends Artillery {
     @Override
     public String getInfo() {
         //return String.format("Я Снайпер" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-        return "Я Снайпер";
+        return "Снайпер";
     }
 
 }

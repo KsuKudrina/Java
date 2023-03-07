@@ -1,6 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Esoterics;
-
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Vector2D;
+package OOP.HomeWork_OOP.Unit;
 
 public class Magician extends Esoteric {
     /**Колдун */
@@ -26,6 +24,6 @@ public class Magician extends Esoteric {
     @Override
     public String getInfo() {
         // return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-        return "Я Колдун";
+        return "Колдун";
     }
 }

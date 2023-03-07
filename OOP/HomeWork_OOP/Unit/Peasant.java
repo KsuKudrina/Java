@@ -1,8 +1,8 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit;
+package OOP.HomeWork_OOP.Unit;
 
 import java.util.ArrayList;
 
-public class Peasant extends  Characters{
+public class Peasant extends  Human{
     /**Крестьянин */
 
     /**кормить (+10 hp) */
@@ -26,11 +26,11 @@ public class Peasant extends  Characters{
 
     @Override
     public String getInfo() {
-        return "Крестьянин";
+        return "Фермер";
     }
 
     @Override
-    public void step(ArrayList<Characters> team1, ArrayList<Characters> team2) {
+    public void step(ArrayList<Human> team1, ArrayList<Human> team2) {
         if (!this.state.equals("Die")){
             this.state = "Stand";
         }

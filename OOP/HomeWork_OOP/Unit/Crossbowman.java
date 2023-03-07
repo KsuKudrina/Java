@@ -1,6 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Artillery;
-
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Vector2D;
+package OOP.HomeWork_OOP.Unit;
 
 public class Crossbowman extends Artillery {
     /**Арбалетчик */
@@ -15,13 +13,9 @@ public class Crossbowman extends Artillery {
      * @param shots
      * @param maxShots
      */
-    
-    public Crossbowman(int x, int y, int hp, int maxHp, int def, int damage, int attack,int speed, int shots, int maxShots) {
-        super(x, y, hp, maxHp, def,  attack, speed, shots, maxShots);
-    }
 
     public Crossbowman(String name, Vector2D pos){
-        super(1, 1, 10, 10, 3, 6, 9, 16, 16);
+        super(1, 1, 10, 10, 3, 8, 9, 16, 16, 1);
         super.name = name;
         this.damage = new int[]{2, 3};
     }
@@ -29,6 +23,6 @@ public class Crossbowman extends Artillery {
     @Override
     public String getInfo() {
         //return String.format("Я Арбалетчик" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-        return "Я Арбалетчик ";
+        return "Арбалетчик";
     }
 }

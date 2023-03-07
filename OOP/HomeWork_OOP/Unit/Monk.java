@@ -1,6 +1,4 @@
-package OOP.HomeWork_OOP.HomeWork_01.Unit.Esoterics;
-
-import OOP.HomeWork_OOP.HomeWork_01.Unit.Vector2D;
+package OOP.HomeWork_OOP.Unit;
 
 public class Monk extends Esoteric {
     /**Монах */
@@ -25,6 +23,6 @@ public class Monk extends Esoteric {
     @Override
     public String getInfo() {
         // return String.format("Я Монах" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-        return "Я Монах";
+        return "Монах";
     }
 }
