@@ -47,8 +47,8 @@ public class View {
                     out = "|" + (AnsiColors.ANSI_RED + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (Main.DarkSide.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + heroEmoji(String.valueOf(human.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
-                if (Main.BrightSide.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (Main.DarkSide.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (Main.BrightSide.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + heroEmoji(String.valueOf(human.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
                 break;
             }
         }
