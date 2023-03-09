@@ -28,6 +28,16 @@ public class View {
                 .replace('i', '\u2518')
                 .replace('-', '\u2500');
     }
+
+    static String heroEmoji(String e){
+        return e.replace("А", "🏹")
+                .replace("С", "🔫")
+                .replace("В", "🧙")
+                .replace("М", "🧝")
+                .replace("К", "🤺")
+                .replace("Р", "🕴")
+                .replace("Ф", "🤠");
+    }
     
     private static String getChar(int x, int y){
         String out = "| ";
@@ -37,18 +47,18 @@ public class View {
                     out = "|" + (AnsiColors.ANSI_RED + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (Main.DarkSide.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
-                if (Main.BrightSide.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (Main.DarkSide.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + heroEmoji(String.valueOf(human.getInfo().charAt(0))) + AnsiColors.ANSI_RESET);
+                if (Main.BrightSide.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                 break;
             }
         }
         return out;
     }
-    static void Win(int size){
-        Main.Team.forEach((v) -> l[0] = Math.max(l[0], v.toString().length()));
-        for (int i = 0; i < l[0]*3; i++) System.out.print(" ");
-        System.out.printf(AnsiColors.ANSI_PURPLE + "%s", size == 0? "Победила Dark Size" : "Победила Bright Size");
-    }
+    // static void Win(int size){
+    //     Main.Team.forEach((v) -> l[0] = Math.max(l[0], v.toString().length()));
+    //     for (int i = 0; i < l[0]*3; i++) System.out.print(" ");
+    //     System.out.printf(AnsiColors.ANSI_PURPLE + "%s", size == 0? "Победила Dark Size" : "Победила Bright Size");
+    // }
     
 
     public static void view() {

@@ -43,7 +43,7 @@ public abstract class Artillery extends Human {
         victim.getDamage(damage);
 
         for (int i = 0; i < team1.size(); i++) {
-            if (team1.get(i).getInfo().equals("Крестьянин") && team1.get(i).state.equals("Stand")){
+            if (team1.get(i).getInfo().equals("Фермер") && team1.get(i).state.equals("Stand")){
                 team1.get(i).state = "Busy";
                 return;
             }

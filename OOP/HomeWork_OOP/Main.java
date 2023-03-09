@@ -38,6 +38,7 @@ public class Main {
             }
         }); 
 
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("Press Enter to begin. ");
         sc.nextLine();

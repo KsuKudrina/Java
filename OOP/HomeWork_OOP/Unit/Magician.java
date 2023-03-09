@@ -24,6 +24,6 @@ public class Magician extends Esoteric {
     @Override
     public String getInfo() {
         // return String.format("Я Колдун" + " %s  / Hp: %d Speed: %d", name, hp, speed);
-        return "Колдун";
+        return "Волшебник";
     }
 }
